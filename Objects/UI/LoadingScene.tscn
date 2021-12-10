@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Objects/UI/ScoreFont.tres" type="BitmapFont" id=1]
+[ext_resource path="res://Sprites/UI/Loading/frame2.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/black.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/Loading/frame1.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Default",
+"speed": 12.0
+} ]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 140, 82 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="LoadingBar" type="ProgressBar" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 26.0
+margin_top = -84.0
+margin_right = -25.0
+margin_bottom = -42.0
+custom_fonts/font = ExtResource( 1 )
+custom_styles/fg = SubResource( 4 )
+custom_styles/bg = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 117, 61 )
+scale = Vector2( 1.548, 1.28 )
+frames = SubResource( 1 )
+animation = "Default"
+frame = 1
+playing = true
+centered = false

@@ -1,0 +1,213 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Sprites/UI/HUD/SkateBar/under.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/UI/HUD/SkateBar/over.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/UI/HUD/SkateBar/progress.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/UI/HUD/heart.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/UI/HUD/InkyTexture.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/UI/HUD/icon.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/UI/Hearts.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/UI/Bar.gd" type="Script" id=8]
+[ext_resource path="res://Objects/UI/Timer.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Nothing"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 0 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Remove"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.42 ),
+"transitions": PoolRealArray( 0, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1.1, 1.4 ), Vector2( 1.4, 1.1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Nothing"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 0 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Remove"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.42 ),
+"transitions": PoolRealArray( 0, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1.1, 1.4 ), Vector2( 1.4, 1.1 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Nothing"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 0 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Remove"
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.42 ),
+"transitions": PoolRealArray( 0, 1, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 1.2, 1.2 ), Vector2( 1.1, 1.4 ), Vector2( 1.4, 1.1 ), Vector2( 0, 0 ) ]
+}
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Black thingy" type="TextureRect" parent="."]
+margin_left = 96.0
+margin_top = 8.0
+margin_right = 417.0
+margin_bottom = 163.0
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Hearts" type="Node2D" parent="."]
+position = Vector2( 16, -16 )
+script = ExtResource( 7 )
+
+[node name="Heart1" type="TextureRect" parent="Hearts"]
+margin_left = 184.0
+margin_top = 56.0
+margin_right = 256.0
+margin_bottom = 129.0
+rect_pivot_offset = Vector2( 35, 36 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hearts/Heart1"]
+anims/Nothing = SubResource( 1 )
+anims/Remove = SubResource( 2 )
+
+[node name="Heart2" type="TextureRect" parent="Hearts"]
+margin_left = 256.0
+margin_top = 48.0
+margin_right = 328.0
+margin_bottom = 121.0
+rect_pivot_offset = Vector2( 35, 36 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hearts/Heart2"]
+anims/Nothing = SubResource( 3 )
+anims/Remove = SubResource( 4 )
+
+[node name="Heart3" type="TextureRect" parent="Hearts"]
+margin_left = 328.0
+margin_top = 40.0
+margin_right = 400.0
+margin_bottom = 113.0
+rect_pivot_offset = Vector2( 35, 36 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hearts/Heart3"]
+anims/Nothing = SubResource( 5 )
+anims/Remove = SubResource( 6 )
+
+[node name="Icon" type="TextureRect" parent="."]
+margin_left = 72.0
+margin_top = 24.0
+margin_right = 214.0
+margin_bottom = 116.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bar" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Tween" type="Tween" parent="Bar"]
+
+[node name="SkateBar" type="TextureProgress" parent="Bar"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 90.0
+margin_bottom = 570.0
+value = 100.0
+texture_under = ExtResource( 1 )
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+tint_progress = Color( 0.572549, 0.580392, 0.282353, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AfterBar" type="TextureProgress" parent="Bar"]
+margin_left = 16.0
+margin_top = 96.0
+margin_right = 90.0
+margin_bottom = 570.0
+value = 100.0
+texture_over = ExtResource( 2 )
+texture_progress = ExtResource( 3 )
+fill_mode = 3
+tint_progress = Color( 0.937255, 0.94902, 0.498039, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 9 )]
+
+[connection signal="value_changed" from="Bar/SkateBar" to="Bar" method="_on_SkateBar_value_changed"]

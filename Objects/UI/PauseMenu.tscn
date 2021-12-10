@@ -1,0 +1,96 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Sprites/black.png" type="Texture" id=1]
+[ext_resource path="res://Objects/UI/PauseMenu.gd" type="Script" id=2]
+[ext_resource path="res://Objects/UI/ButtonTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Sprites/UI/Pause/Tip.png" type="Texture" id=4]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Control"]
+modulate = Color( 1, 1, 1, 0.498039 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 1240.0
+margin_bottom = 680.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ResumeButton" type="Button" parent="Control"]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 220.0
+margin_bottom = 224.0
+theme = ExtResource( 3 )
+text = "resume"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RestartButton" type="Button" parent="Control"]
+margin_left = 64.0
+margin_top = 248.0
+margin_right = 246.0
+margin_bottom = 280.0
+theme = ExtResource( 3 )
+text = "restart"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionsButton" type="Button" parent="Control"]
+margin_left = 64.0
+margin_top = 304.0
+margin_right = 308.0
+margin_bottom = 336.0
+theme = ExtResource( 3 )
+disabled = true
+enabled_focus_mode = 0
+text = "options"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TitleButton" type="Button" parent="Control"]
+margin_left = 64.0
+margin_top = 352.0
+margin_right = 432.0
+margin_bottom = 392.0
+theme = ExtResource( 3 )
+disabled = true
+enabled_focus_mode = 0
+text = "go     back     to     title"
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+margin_left = 512.0
+margin_top = 72.0
+margin_right = 960.0
+margin_bottom = 520.0
+texture = ExtResource( 4 )
+expand = true
+
+[connection signal="mouse_entered" from="Control/ResumeButton" to="." method="_entered1"]
+[connection signal="pressed" from="Control/ResumeButton" to="." method="resume_pressed"]
+[connection signal="mouse_entered" from="Control/RestartButton" to="." method="_entered2"]
+[connection signal="pressed" from="Control/RestartButton" to="." method="restart_pressed"]
+[connection signal="focus_entered" from="Control/OptionsButton" to="." method="_on_OptionsButton_focus_entered"]
+[connection signal="pressed" from="Control/OptionsButton" to="." method="_pressed_Options"]
+[connection signal="pressed" from="Control/TitleButton" to="." method="titlebutton_pressed"]
