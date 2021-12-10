@@ -10,6 +10,7 @@ var current_bar_val = 100 # Current skate var value.
 var current_level = 1
 
 export var max_load_time = 10000 # Max load time for loading.
+onready var menuSound = preload("res://Sounds/Menu.wav")
 
 # Keybinding shit
 var filepath = OS.get_executable_path().get_base_dir() + "/keybinds.ini"
@@ -54,7 +55,7 @@ func goto_scene(path, current_scene):
 			#Still loading
 			var progress = float(loader.get_stage())/loader.get_stage_count()
 			loading_bar.get_node("LoadingBar").value = progress * 100
-			print(progress)
+			print(progress*100)
 		else:
 			print("Error while loading file")
 			break

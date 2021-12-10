@@ -130,7 +130,7 @@ func shrink(from, to, duration: float):
 	controlRoot.queue_free()
 	get_tree().set_pause(false)
 
-func slide_rect(from, to, duration: float, color: Color, dir: Vector2) -> void:
+func slide_rect(from, to, duration: float, color: Color, dir: Vector2, pause:bool = true) -> void:
 	var controlRoot = CanvasLayer.new()
 	var overlay = ZigZagOverlay.instance()
 	var tween = Tween.new()
@@ -141,11 +141,11 @@ func slide_rect(from, to, duration: float, color: Color, dir: Vector2) -> void:
 	overlay.color = color
 	overlay.global_position = Vector2(0, 0)
 	controlRoot.add_child(tween)
-	get_tree().set_pause(true)
+	if pause:
+		get_tree().set_pause(true)
 	
 	tween.interpolate_property(overlay, "global_position", Vector2(-(dir.x * SCREEN.width), 0), Vector2(0, 0), duration/2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-	
 	
 	yield(tween, "tween_all_completed")
 	
@@ -176,7 +176,6 @@ func slide_rect2(from, to, duration: float, color: Color, dir: Vector2) -> void:
 	
 	tween.interpolate_property(overlay, "global_position", Vector2(-(dir.x * SCREEN.width), 0), Vector2(0, 0), duration/2, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	tween.start()
-	
 	
 	yield(tween, "tween_all_completed")
 	

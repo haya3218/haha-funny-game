@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/UI/TitleScreen.gd" type="Script" id=1]
-[ext_resource path="res://Objects/UI/ScoreFont.tres" type="BitmapFont" id=2]
-[ext_resource path="res://Objects/UI/ButtonTheme.tres" type="Theme" id=3]
-[ext_resource path="res://Sprites/black.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/black.png" type="Texture" id=2]
+[ext_resource path="res://Objects/UI/ScoreFont.tres" type="BitmapFont" id=3]
+[ext_resource path="res://Objects/UI/ButtonTheme.tres" type="Theme" id=4]
+[ext_resource path="res://Sounds/Menu.wav" type="AudioStream" id=5]
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -17,7 +18,7 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.27451 )
 margin_right = 1048.0
 margin_bottom = 648.0
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -27,7 +28,7 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0.67451 )
 margin_right = 1048.0
 margin_bottom = 648.0
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 expand = true
 __meta__ = {
 "_edit_lock_": true,
@@ -39,8 +40,8 @@ margin_left = 40.0
 margin_top = 424.0
 margin_right = 234.0
 margin_bottom = 464.0
-theme = ExtResource( 3 )
-custom_fonts/font = ExtResource( 2 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "New      game"
 align = 0
 __meta__ = {
@@ -52,8 +53,8 @@ margin_left = 40.0
 margin_top = 472.0
 margin_right = 234.0
 margin_bottom = 512.0
-theme = ExtResource( 3 )
-custom_fonts/font = ExtResource( 2 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "Options"
 align = 0
 __meta__ = {
@@ -65,13 +66,16 @@ margin_left = 40.0
 margin_top = 520.0
 margin_right = 200.0
 margin_bottom = 560.0
-theme = ExtResource( 3 )
-custom_fonts/font = ExtResource( 2 )
+theme = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 text = "exit"
 align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
 
 [connection signal="focus_entered" from="StartButton" to="." method="_on_StartButton_focus_entered"]
 [connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]

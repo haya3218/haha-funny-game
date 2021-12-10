@@ -57,7 +57,10 @@ _global_script_class_icons={
 [application]
 
 config/name="ReworkedSkatborGame"
-run/main_scene="res://Scenes/Title Screen.tscn"
+run/main_scene="res://Scenes/Load.tscn"
+boot_splash/image="res://Sprites/black.png"
+boot_splash/use_filter=false
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
 
 [autoload]

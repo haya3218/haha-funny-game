@@ -73,7 +73,6 @@ func _change_key(new_key):
 	InputMap.action_add_event(action_string, new_key)
 	
 	current_keybinds[action_string] = new_key.scancode
-	print(str(current_keybinds)+" lmao")
 	Globals.keybinds = current_keybinds.duplicate()
 	Globals.set_game_binds()
 	Globals.write_config()

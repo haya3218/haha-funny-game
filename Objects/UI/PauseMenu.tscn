@@ -5,7 +5,7 @@
 [ext_resource path="res://Objects/UI/ButtonTheme.tres" type="Theme" id=3]
 [ext_resource path="res://Sprites/UI/Pause/Tip.png" type="Texture" id=4]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Pause" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="Control" type="Control" parent="."]
@@ -71,8 +71,6 @@ margin_top = 352.0
 margin_right = 432.0
 margin_bottom = 392.0
 theme = ExtResource( 3 )
-disabled = true
-enabled_focus_mode = 0
 text = "go     back     to     title"
 align = 0
 __meta__ = {

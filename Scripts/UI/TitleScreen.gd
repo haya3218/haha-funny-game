@@ -26,7 +26,7 @@ func _on_StartButton_pressed():
 	var left = Vector2(-2, 0)
 	sound.stream = load("res://Sounds/Accept.wav")
 	sound.play()
-	Transitions.slide_rect2(self, "res://Scenes/Test.tscn", 2, Color.black, Vector2(-2, 0))
+	Transitions.slide_rect(self, "res://Scenes/Test.tscn", 2, Color.black, Vector2(-2, 0), false)
 
 func _on_ExitButton_pressed():
 	get_tree().quit()
